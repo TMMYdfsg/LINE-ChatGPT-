@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+#history {
+    list-style-type: none;
+    padding: 0;
+}
+
+#history li {
+    background: #e9ecef;
+    padding: 8px;
+    margin: 5px 0;
+}

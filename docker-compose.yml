@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+      - GROWI_URL=${GROWI_URL}
+      - GROWI_API_KEY=${GROWI_API_KEY}
+      - GEMINI_URL=${GEMINI_URL}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}

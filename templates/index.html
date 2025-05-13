@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Search App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h1>Search Application</h1>
+    <form action="/search" method="post">
+        <label for="query">Search Query:</label>
+        <input type="text" id="query" name="query" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <h2>Search History</h2>
+    <ul id="history">
+        <!-- JavaScript‚Å—š—ð‚ð•\Ž¦ -->
+    </ul>
+
+    <script>
+        // —š—ð‚ð”ñ“¯Šú‚ÅŽæ“¾
+        fetch('/history')
+            .then(response => response.json())
+            .then(data => {
+                const historyList = document.getElementById('history');
+                data.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${item.query} ( ${item.timestamp} )`;
+                    historyList.appendChild(listItem);
+                });
+            });
+    </script>
+</body>
+
+</html>
